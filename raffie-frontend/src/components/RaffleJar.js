@@ -15,13 +15,14 @@ function RaffleJar() {
     }
     return (
         <div>
-            <IconButton size="small" onClick={event => handleReset()}>
-                    <Refresh/>
-            </IconButton> 
-            <IconButton size="small" onClick={event => handleEntrySelection()}>
+            
+            <IconButton size="small" onClick={event => handleEntrySelection()} aria-label="select entry from list" color="secondary">
                 <CheckBox />
             </IconButton>
             <img src={raffle} className="small-raffle-ticket" />
+            <IconButton size="small" onClick={event => handleReset()} aria-label='refresh list' color="secondary">
+                    <Refresh/>
+            </IconButton> 
             <p>
             {chosenEntry}
             </p> 

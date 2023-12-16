@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  
 }
 
 .App-logo {
@@ -17,6 +18,7 @@
 }
 .main-header {
   font-size: calc(10px + 2vmin);
+ 
 }
 .App-body {
   min-height: 100vh;
@@ -25,8 +27,14 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  background-color: floralwhite ;
 }
-
+.input-buttons {
+  padding: 5px;
+}
+.Main-page {
+  background-color: floralwhite;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

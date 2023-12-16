@@ -1,5 +1,6 @@
 import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
+import { AddCircle } from '@mui/icons-material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { addEntry } from '../store/raffleJarSlice';
@@ -8,43 +9,35 @@ function EntryForm() {
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
     function handleFirstName(name, value) {
-        console.log(value)
         setFirstName(value)
-        console.log(firstName)
     }
     function handleLastName(name, value) {
         setLastName(value)
-        console.log(lastName)
     }
     function handleSubmit() {
-        console.log(firstName + lastName)
         dispatch(addEntry(`${firstName + ' ' + lastName}`))
     }
     return (
         <div>
+            <header><h2>Add Contestants</h2></header>
             <TextField
                 required
-                id="filled-multiline-flexible"
+                color="secondary"
                 label="First Name"
-                multiline
-                maxRows={2}
-                variant="filled"
+                variant="outlined"
                 name="firstName"
                 onChange={event => handleFirstName(event.target.name, event.target.value)}
             />
             <TextField
+                color="secondary"
                 required
-                id="filled-multiline-flexible"
                 label="Last Name"
-                multiline
-                maxRows={2}
-                variant="filled"
+                variant="outlined"
                 onChange={event => handleLastName(event.target.name, event.target.value)}
             />
-
-            <Button size="medium" onClick={event => handleSubmit()} type='button' variant="contained" color="secondary"    style={{justifyContent: "center"}}>
-                submit
-            </Button>
+            <IconButton onClick={event => handleSubmit()} type='button' color="secondary" aria-label='submit entry'>
+                <AddCircle className='input-buttons' />
+            </IconButton>
         </div>
     )
 }
