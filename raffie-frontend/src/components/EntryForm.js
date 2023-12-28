@@ -4,10 +4,12 @@ import { AddCircle } from '@mui/icons-material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { addEntry } from '../store/raffleJarSlice';
+
 function EntryForm() {
     const dispatch = useDispatch()
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
+    
     function handleFirstName(name, value) {
         setFirstName(value)
     }
@@ -19,7 +21,9 @@ function EntryForm() {
     }
     return (
         <div>
-            <header><h2>Add Contestants</h2></header>
+            <header>
+                <h2>Add Contestants</h2>
+            </header>
             <TextField
                 required
                 color="secondary"

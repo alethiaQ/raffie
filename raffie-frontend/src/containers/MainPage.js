@@ -5,7 +5,7 @@ import RaffleJar from "../components/RaffleJar";
 function MainPage() {
     const entries = useSelector(state => state.raffle.entries)
     return (
-        <Grid container spacing={4} direction="row" >
+    <Grid container spacing={4} direction="row" >
         <Grid item xs={6}>
             <EntryForm />
                 {entries.map(entry => {
