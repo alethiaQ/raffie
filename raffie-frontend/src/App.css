@@ -17,8 +17,12 @@
   }
 }
 .main-header {
-  font-size: calc(40px + 2vmin);
+  font-size: calc(10px + 2vmin);
  
+}
+.enter-text {
+    max-width: 80vmin;
+    /* height: 40vmin; */
 }
 .App-body {
   min-height: 100vh;
