@@ -9,6 +9,7 @@ function LandingPage() {
     }
     return (
         <div className="App-body">
+            
             {showTicket === true ? (
                 <header id="enter-header" className='main-header'> 
                     <img src={enterinTransparent} className='enter-text'/>

@@ -36,6 +36,11 @@
 .input-buttons {
   padding: 5px;
 }
+.raffie-logo {
+  position:absolute; 
+  top:0px; 
+  left:8px;
+}
 .Main-page {
   background-color: floralwhite;
 }
