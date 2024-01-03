@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  background-color: floralwhite ;
+
 }
 .input-buttons {
   padding: 5px;
@@ -39,10 +39,10 @@
 .raffie-logo {
   position:absolute; 
   top:0px; 
-  left:8px;
+  right:8px;
 }
 .Main-page {
-  background-color: floralwhite;
+
 }
 @keyframes App-logo-spin {
   from {
