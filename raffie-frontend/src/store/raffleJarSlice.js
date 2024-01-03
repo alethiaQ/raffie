@@ -5,7 +5,8 @@ export const raffleJarSlice = createSlice({
   initialState: {
       entries: [],
       max: 0,
-      chosenEntry: ''
+      chosenEntry: '',
+      entryType: 'string'
   },
     reducers: {
         addEntry: (state, action) => {
@@ -19,11 +20,14 @@ export const raffleJarSlice = createSlice({
         pickEntry: state => {
             const random = Math.floor(Math.random() * state.entries.length);
             state.chosenEntry = state.entries[random]
+        },
+        changeEntryType: (state, action) => {
+            state.entryType = action.payload
         }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { addEntry, resetJar, pickEntry } = raffleJarSlice.actions
+export const { addEntry, resetJar, pickEntry, changeEntryType } = raffleJarSlice.actions
 
 export default raffleJarSlice.reducer

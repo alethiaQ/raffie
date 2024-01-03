@@ -34,7 +34,7 @@
 
 }
 .input-buttons {
-  padding: 5px;
+  padding: 1px;
 }
 .raffie-logo {
   position:absolute; 
@@ -43,6 +43,11 @@
 }
 .Main-page {
 
+}
+.settings-button {
+  position:absolute; 
+  top:0px; 
+  left:8px;
 }
 @keyframes App-logo-spin {
   from {
