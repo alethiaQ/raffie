@@ -5,8 +5,8 @@
 }
 
 .App-logo {
-  height: 30vmin;
-  padding: 20px;
+  height: 40vmin;
+  padding: 10px;
   /* pointer-events: none; */
 }
 .small-raffle-ticket {
@@ -23,8 +23,13 @@
 }
 .enter-text {
     max-width: 60vmin;
-    padding: 5px;
+    /* padding: 5px; */
     /* height: 40vmin; */
+}
+.fun-text {
+  position:absolute; 
+  top:0px; 
+  left:8px;
 }
 .App-body {
   min-height: 100vh;

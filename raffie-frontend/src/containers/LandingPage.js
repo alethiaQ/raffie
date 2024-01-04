@@ -1,7 +1,7 @@
 import raffle from '../raffletickets.png';
 import { useState } from 'react';
 import MainPage from './MainPage';
-import enterinTransparent from '../enterinTransparentBlack.jpeg'
+import enterinTransparent from '../enterInLayers.jpeg'
 function LandingPage() {
     const [showTicket, setTicket] = useState(true);
     function handleClick() {
