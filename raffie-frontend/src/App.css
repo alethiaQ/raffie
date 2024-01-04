@@ -5,7 +5,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
+  padding: 20px;
   /* pointer-events: none; */
 }
 .small-raffle-ticket {
@@ -21,7 +22,8 @@
  
 }
 .enter-text {
-    max-width: 80vmin;
+    max-width: 60vmin;
+    padding: 5px;
     /* height: 40vmin; */
 }
 .App-body {
