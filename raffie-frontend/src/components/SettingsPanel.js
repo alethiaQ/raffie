@@ -5,22 +5,23 @@ import { changeEntryType } from "../store/raffleJarSlice";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 function SettingsPanel() {
     const dispatch = useDispatch();
-    const [setting, setSetting] = useState("String")
+    const [setting, setSetting] = useState("Names")
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClose = (event) => {
-        if (event === 'String' || event === 'Number') {
+        if (event === 'Names' || event === 'Emails') {
             setSetting(event)
-            dispatch(changeEntryType(setting))
+            changeSetting(event)
         }
-        console.log(setting);
-        
         setAnchorEl(null);
     };
+    const changeSetting = (event) => {
+        dispatch(changeEntryType(event))
+    }
     const openSettingsPanel = (event) => {
         setAnchorEl(event.currentTarget);
     }
- 
+    const options = ["Names", "Emails"];
     return (
         <span>
              <IconButton type='button' color="secondary" aria-label='submit entry' className="settings-button"
@@ -39,12 +40,11 @@ function SettingsPanel() {
                     onClose={handleClose}
         
                 >
-                    <MenuItem key="string" selected={ setting === "String"} onClick={event => handleClose(event.target.innerText)} name="string">
-                        String
-                    </MenuItem>
-                    <MenuItem key="number" selected={ setting === "Number"} onClick={event => handleClose(event.target.innerText)} name="number">
-                        Number
-                    </MenuItem>
+                {options.map((option) => (
+                    <MenuItem key={option} selected={setting === option} onClick={event => handleClose(event.target.innerText)} name={option}>
+                        {option}
+                        </MenuItem>
+                    ))}
             </Menu>
         </span>
     )

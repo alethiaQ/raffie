@@ -1,44 +1,69 @@
-import TextField from '@mui/material/TextField';
-import { IconButton } from '@mui/material';
+
+import { IconButton, TextField} from '@mui/material';
 import { AddCircle } from '@mui/icons-material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { addEntry } from '../store/raffleJarSlice';
+import { useSelector } from 'react-redux';
 
 function EntryForm() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const formSettings = useSelector(state => state.raffle.entryType);
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
+    const [email, setEmail] = useState();
     
-    function handleFirstName(name, value) {
+    function handleFirstName(value) {
         setFirstName(value)
     }
-    function handleLastName(name, value) {
+    function handleLastName(value) {
         setLastName(value)
     }
+    function handleEmail(value) {
+        setEmail(value)
+    }
     function handleSubmit() {
-        dispatch(addEntry(`${firstName + ' ' + lastName}`))
+        if (formSettings === "Names") {
+            dispatch(addEntry(`${firstName + ' ' + lastName}`))
+        } else {
+            dispatch(addEntry(email))
+        }
+        
     }
     return (
         <div>
             <header>
-                <h2>Add Contestants</h2>
+                <h1>Add Contestants</h1>
             </header>
-            <TextField
+            {formSettings === "Names" ? ( <span>
+                <TextField
                 required
                 color="secondary"
                 label="First Name"
                 variant="outlined"
                 name="firstName"
-                onChange={event => handleFirstName(event.target.name, event.target.value)}
+                onChange={event => handleFirstName(event.target.value)}
             />
             <TextField
                 color="secondary"
                 required
                 label="Last Name"
                 variant="outlined"
-                onChange={event => handleLastName(event.target.name, event.target.value)}
+                onChange={event => handleLastName(event.target.value)}
             />
+            </span>
+            ) : (
+                    <span>
+                        <TextField
+                            color="secondary"
+                            required
+                            label="Email"
+                            variant="outlined"
+                            onChange={event => handleEmail(event.target.value)}
+                        />
+                    </span>
+                )}
+            
             <IconButton onClick={event => handleSubmit()} type='button' color="secondary" aria-label='submit entry'>
                 <AddCircle className='input-buttons' />
             </IconButton>

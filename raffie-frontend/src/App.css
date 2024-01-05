@@ -9,6 +9,9 @@
   padding: 10px;
   /* pointer-events: none; */
 }
+.standard-font {
+  font-family: 'Bebas Neue', sans-serif;
+}
 .small-raffle-ticket {
   height: 20vmin;
 }

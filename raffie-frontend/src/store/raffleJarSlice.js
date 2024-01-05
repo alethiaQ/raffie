@@ -6,7 +6,7 @@ export const raffleJarSlice = createSlice({
       entries: [],
       max: 0,
       chosenEntry: '',
-      entryType: 'string'
+      entryType: 'Names'
   },
     reducers: {
         addEntry: (state, action) => {
