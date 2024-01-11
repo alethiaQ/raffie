@@ -8,7 +8,7 @@ function MainPage() {
     const entries = useSelector(state => state.raffle.entries)
    
     return ( 
-        <Grid container spacing={4} direction="row" >
+        <Grid container spacing={4} direction="row" className="no-background">
             <Grid item xs={6}>
                 <SettingsPanel />
                 <EntryForm />

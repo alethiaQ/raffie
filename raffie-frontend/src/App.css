@@ -1,12 +1,16 @@
 .App {
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
+
   
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 25vmin;
   padding: 10px;
+  position:absolute; 
+  top:280px;
+  left:480px;
   /* pointer-events: none; */
 }
 .standard-font {
@@ -17,15 +21,18 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    /* animation: App-logo-spin infinite 10s linear; */
+    animation: App-logo-spin infinite 10s linear;
   }
 }
 .main-header {
   font-size: calc(10px + 2vmin);
  
 }
+.no-background {
+  background-image: none !important;
+}
 .enter-text {
-    max-width: 60vmin;
+    max-width: 100vmin;
     /* padding: 5px; */
     /* height: 40vmin; */
 }
@@ -41,7 +48,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
+  background-image: url("test.jpeg");
 }
 .input-buttons {
   padding: 1px;
